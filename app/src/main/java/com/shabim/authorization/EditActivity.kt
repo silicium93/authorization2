@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
 
 class EditActivity : AppCompatActivity() {
 
@@ -28,6 +29,7 @@ class EditActivity : AppCompatActivity() {
         buttonSave = findViewById(R.id.buttonSave)
 
         buttonSave.setOnClickListener{
+
             if (editTextName.text.isNotEmpty() && editTextAge.text.isNotEmpty() && editTextAddress.text.isNotEmpty() && editTextEmail.text.isNotEmpty()){
                 val intent = Intent(this,InfoActivity::class.java)
                 intent.putExtra("name", editTextName.text.toString())

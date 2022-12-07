@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">authorization</string>
     <string name="createUser">Создать пользователя</string>
+
+    <string-array name="spinnerChangeThemeItems">
+        <item>"Светлая тема"</item>
+        <item>Тёмная тема</item>
+        <item>Как в системе</item>
+    </string-array>
 </resources>
