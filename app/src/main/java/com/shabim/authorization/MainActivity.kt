@@ -8,12 +8,13 @@ import android.widget.CheckBox
 import android.widget.Switch
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.widget.SwitchCompat
 import androidx.core.view.isGone
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var buttonCreateUser : Button
-    lateinit var switchTheme: Switch
+    lateinit var switchTheme: SwitchCompat
     lateinit var checkBoxThemeInSystem : CheckBox
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,9 +24,6 @@ class MainActivity : AppCompatActivity() {
         buttonCreateUser = findViewById(R.id.buttonCreateUser);
         checkBoxThemeInSystem = findViewById(R.id.checkBoxThemeInSystem)
         switchTheme = findViewById(R.id.switchTheme)
-
-
-        setThemeSwitch()
 
         buttonCreateUser.setOnClickListener{
             val intent: Intent = Intent(this, EditActivity::class.java)
@@ -52,6 +50,12 @@ class MainActivity : AppCompatActivity() {
         }
 
 }
+
+    override fun onResume() {
+        super.onResume()
+        setThemeSwitch()
+    }
+
     private fun setThemeSwitch(){
 
         when(resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK){
