@@ -10,37 +10,34 @@
         android:id="@+id/buttonCreateUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="@string/createUser"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <CheckBox
-        android:id="@+id/checkBoxThemeInSystem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="258dp"
-        android:layout_marginBottom="16dp"
-        android:checked="false"
-        android:layoutDirection="rtl"
-        android:text="Как в системе"
-        android:textSize="14sp"
+    <Spinner
+        android:id="@+id/spinner_Themes"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:entries="@array/spinnerChangeThemeItems"
+        android:prompt="@string/spinner_title"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCreateUser" />
 
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/switchTheme"
+    <Button
+        android:id="@+id/buttonApplyTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="8dp"
-        android:checked="false"
-        android:enabled="true"
-        android:focusable="true"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/checkBoxThemeInSystem"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_margin="16dp"
+        android:text="@string/apply"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_Themes" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

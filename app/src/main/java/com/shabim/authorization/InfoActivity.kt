@@ -1,5 +1,6 @@
 package com.shabim.authorization
 
+import android.annotation.SuppressLint
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.os.Bundle
@@ -17,6 +18,7 @@ class InfoActivity : AppCompatActivity() {
 
     lateinit var buttonSend: Button
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_info)
@@ -28,10 +30,10 @@ class InfoActivity : AppCompatActivity() {
 
         buttonSend = findViewById(R.id.buttonSend)
 
-        textViewName.text = "Имя: ${intent.getStringExtra("name")}"
-        textViewAge.text = "Возраст: ${intent.getStringExtra("age")}"
-        textViewAddress.text = "Адрес: ${intent.getStringExtra("address")}"
-        textViewEmail.text = "E-mail: ${intent.getStringExtra("email")}"
+        textViewName.text = getString(R.string.name) + intent.getStringExtra("name")
+        textViewAge.text = getString(R.string.age) + intent.getStringExtra("age")
+        textViewAddress.text = getString(R.string.address) + intent.getStringExtra("address")
+        textViewEmail.text = getString(R.string.email) + intent.getStringExtra("email")
 
         buttonSend.setOnClickListener {
 
@@ -49,7 +51,7 @@ class InfoActivity : AppCompatActivity() {
             } catch (e: ActivityNotFoundException) {
                 val toast = Toast.makeText(
                     this,
-                    "Подходящее приложение для отправки не найдено",
+                    getString(R.string.no_app_to_send),
                     Toast.LENGTH_SHORT
                 )
                 toast.show()

@@ -10,12 +10,12 @@ import androidx.appcompat.app.AppCompatDelegate
 
 class EditActivity : AppCompatActivity() {
 
-    lateinit var editTextName : EditText
-    lateinit var editTextAge : EditText
-    lateinit var editTextAddress : EditText
-    lateinit var editTextEmail : EditText
+    lateinit var editTextName: EditText
+    lateinit var editTextAge: EditText
+    lateinit var editTextAddress: EditText
+    lateinit var editTextEmail: EditText
 
-    lateinit var buttonSave : Button
+    lateinit var buttonSave: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,23 +28,23 @@ class EditActivity : AppCompatActivity() {
 
         buttonSave = findViewById(R.id.buttonSave)
 
-        buttonSave.setOnClickListener{
+        buttonSave.setOnClickListener {
 
-            if (editTextName.text.isNotEmpty() && editTextAge.text.isNotEmpty() && editTextAddress.text.isNotEmpty() && editTextEmail.text.isNotEmpty()){
-                val intent = Intent(this,InfoActivity::class.java)
+            if (editTextName.text.isNotEmpty() && editTextAge.text.isNotEmpty() && editTextAddress.text.isNotEmpty() && editTextEmail.text.isNotEmpty()) {
+                val intent = Intent(this, InfoActivity::class.java)
                 intent.putExtra("name", editTextName.text.toString())
                 intent.putExtra("age", editTextAge.text.toString())
                 intent.putExtra("address", editTextAddress.text.toString())
                 intent.putExtra("email", editTextEmail.text.toString())
 
                 startActivity(intent)
-            }
-            else {
-                val toast = Toast.makeText(this, "Заполните все поля", Toast.LENGTH_SHORT)
+            } else {
+                val toast =
+                    Toast.makeText(this, getString(R.string.fill_all_fields), Toast.LENGTH_SHORT)
                 toast.show()
             }
         }
 
-        }
-
     }
+
+}

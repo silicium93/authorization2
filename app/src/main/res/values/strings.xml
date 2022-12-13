@@ -1,6 +1,23 @@
 <resources>
     <string name="app_name">authorization</string>
     <string name="createUser">Создать пользователя</string>
+    <string name="night_theme">Тёмная тема</string>
+    <string name="light_theme">Светлая тема</string>
+    <string name="no_app_to_send">Подходящее приложение для отправки не найдено</string>
+    <string name="name">\"Имя: \"</string>
+    <string name="age">\"Возраст: \"</string>
+    <string name="address">\"Адрес: \"</string>
+    <string name="email">\"E-mail: \"</string>
+    <string name="fill_all_fields">Заполните все поля</string>
+    <string name="like_in_system">Как в системе</string>
+    <string name="name_tint">Имя</string>
+    <string name="address_tint">Адрес</string>
+    <string name="age_tint">Возраст</string>
+    <string name="email_tint">E-mail</string>
+    <string name="save_tint">Сохранить</string>
+    <string name="send">Отправить</string>
+    <string name="spinner_title">Выбор темы приложения</string>
+    <string name="apply">Применить</string>
 
     <string-array name="spinnerChangeThemeItems">
         <item>"Светлая тема"</item>
